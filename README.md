@@ -6,7 +6,7 @@
 
 ชื่อ-สกุล : จิรเดช อรทัย
 
-Vercel URL :
+Vercel URL : https://lab08-2567-640610287.vercel.app/
 
 ---
 
