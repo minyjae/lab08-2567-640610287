@@ -1,44 +1,32 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Task from "./components/Task";
+import TaskInput from "./components/TaskInput";
+
+
 export default function Home() {
+  const tasksData = [
+    { id: 1, title: "Read a book", isDone: true },
+    { id: 2, title: "Take a shower", isDone: false },
+    { id: 3, title: "Sleep", isDone: false },
+  ];
+
+  // const tasks = tasksData.map(tasksData => new TaskClass(tasksData.id, tasksData.title, tasksData.isDone));
   return (
     // Main container
     <div className="container mx-auto">
       {/* header section */}
       <Header />
-
       {/* tasks container */}
       <div style={{ maxWidth: "400px" }} className="mx-auto">
-        {/* task input */}
-        <div className="d-flex gap-1">
-          <input
-            className="form-control"
-            placeholder="Insert a task here.."
-          ></input>
-          <button className="btn btn-primary">Add</button>
-        </div>
-        {/* task */}
-        <div className="d-flex p-3 gap-2 align-items-center border-bottom">
-          <span>Read a book</span>
-          <button className="btn btn-success">Done</button>
-          <button className="btn btn-danger">Delete</button>
-        </div>
-        {/* task */}
-        <div className="d-flex p-3 gap-2 align-items-center border-bottom">
-          <span>Take a shower</span>
-          <button className="btn btn-success">Done</button>
-          <button className="btn btn-danger">Delete</button>
-        </div>
-        {/* task */}
-        <div className="d-flex p-3 gap-2 align-items-center border-bottom">
-          <span>Sleep</span>
-          <button className="btn btn-success">Done</button>
-          <button className="btn btn-danger">Delete</button>
-        </div>
+        <TaskInput />
+        {/* task detail*/}
+        <Task {...tasksData[0]} />
+        <Task {...tasksData[1]} />
+        <Task {...tasksData[2]} /> 
       </div>
-
       {/* //footer section */}
-      <Footer name = "Jiradate Oratai" stuID = "640610287"/>
+      <Footer year = "2024" fullName = "Jiradate Oratai" studentId = "640610287"/>
     </div>
   );
 }
